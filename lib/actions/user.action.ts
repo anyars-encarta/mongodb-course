@@ -28,7 +28,7 @@ export async function createUser({
     phone,
     password,
   });
-  
+
   return user;
 }
 
@@ -37,4 +37,19 @@ export async function getAllUsers() {
 
   const users = await User.find();
   return users;
+}
+
+export async function getSingleUser(name: string) {
+  await dbConnect();
+
+  const user = await User.find({ name }, "name email address");
+
+  return user;
+}
+
+export async function createMultipleUsers(users: UserProps[]) {
+  await dbConnect();
+
+  const createdUsers = await User.create(users);
+  return createdUsers;
 }

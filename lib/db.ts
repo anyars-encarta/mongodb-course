@@ -1,4 +1,4 @@
-import mongoose, { Connection, MongooseOptions } from "mongoose";
+import mongoose, { Connection } from "mongoose";
 
 async function dbConnect(): Promise<Connection> {
     if (mongoose.connection.readyState === 0) {
@@ -8,12 +8,7 @@ async function dbConnect(): Promise<Connection> {
             throw new Error("Please define the MONGODB_URI environment variable");
         }
 
-        const mongooseOpts = {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        } as MongooseOptions;
-
-        await mongoose.connect(mongoURI, mongooseOpts);
+        await mongoose.connect(mongoURI);
     }
 
     return mongoose.connection;
