@@ -1,10 +1,15 @@
 import { createPost, getAllPosts } from "@/lib/actions/post.action";
-import { createMultipleUsers, createUser, getAllUsers, getSingleUser } from "@/lib/actions/user.action";
+import {
+  createMultipleUsers,
+  createUser,
+  getAllUsers,
+  getSingleUser,
+} from "@/lib/actions/user.action";
 
 const Home = async () => {
   const users = await getAllUsers();
 
-  const user = await getSingleUser("Awal")
+  const user = await getSingleUser("Awal");
 
   console.log("The single user is: ", user);
 
@@ -42,6 +47,17 @@ const Home = async () => {
       password: "password",
     },
   ];
+
+  if (users.length === 0) {
+    await createUser({
+      name: "Awal",
+      email: "awal@example.com",
+      dob: new Date("1983-01-01"),
+      address: "123 Main St, New York, NY 10030",
+      phone: "123-456-7890",
+      password: "password",
+    });
+  }
 
   if (users.length === 0) {
     await createMultipleUsers(moreUsers);
