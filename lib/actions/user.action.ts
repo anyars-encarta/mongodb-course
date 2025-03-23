@@ -53,3 +53,20 @@ export async function createMultipleUsers(users: UserProps[]) {
   const createdUsers = await User.create(users);
   return createdUsers;
 }
+
+export async function updateUserEmail(userId: string, newEmail: string) {
+  await dbConnect();
+
+  // const user = await User.findById({ _id: userId });
+
+  // user.email = newEmail;
+  // user.save();
+
+  // return user;
+
+  const user = await User.updateOne({ _id: userId }, {email: newEmail}, { upsert: true});
+
+  console.log("I just updated the user email of: ", user);
+
+  return user;
+}
