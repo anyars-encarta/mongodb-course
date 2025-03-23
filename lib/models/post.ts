@@ -1,7 +1,7 @@
-import { model, models, Schema } from "mongoose";
+import { model, models, Schema, Types } from "mongoose";
 
 interface PostParams {
-    userId: string;
+    userId: Types.ObjectId;
     title: string;
     desc: string;
     image: string;
@@ -10,8 +10,9 @@ interface PostParams {
     createdAt: Date;
     updatedAt: Date;
 }
-const PostSchema = new Schema<PostParams>({
-    userId: String,
+const PostSchema = new Schema<PostParams>(
+    {
+    userId: { type: Schema.Types.ObjectId, ref: "User"},
     title: String,
     desc: String,
     image: String,
@@ -19,7 +20,9 @@ const PostSchema = new Schema<PostParams>({
     comments: [String],
     createdAt: Date,
     updatedAt: Date
-});
+},
+    { timestamps: true }
+);
 
 const Post = models?.Post || model<PostParams>("Post", PostSchema);
 
