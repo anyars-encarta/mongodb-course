@@ -4,7 +4,7 @@ added something amazing
 
 First, run the development server:
 
-First, run the development
+First, run the
 
 ```bash
 npm run dev
