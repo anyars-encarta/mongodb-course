@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) to show the correct use of Mongodb and mongoose. More functionalities to be added soon. Powered by create
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) to show the correct use of Mongodb and mongoose. More functionalities to be added soon. Powered by
  
 ## Getting Started
 
