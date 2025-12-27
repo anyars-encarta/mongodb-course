@@ -1,6 +1,8 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) to show the correct use of Mongodb and mongoose.
+
+
+## Getting to show the correct use of Mongodb and mongoose.
  
-## Getting Started
 
 First, run the development server:
 
